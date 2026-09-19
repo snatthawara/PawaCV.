@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natthawara Saeliab | แฟ้มรายงานผลงานบุคคล (Personal Portfolio & Dossier)</title>
+  <meta name="description" content="Web Application รายงานผลงานบุคคล นางสาวณัฐวรา แซ่เลียบ สไตล์ Papery tactile craft คณะบริหารธุรกิจและอุตสาหกรรมบริการ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📜</text></svg>">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. SPLASH SCREEN (First Load & Refresh) with Background Decoration
+       ======================================================================== -->
+  <div id="splash-screen" role="dialog" aria-modal="true" aria-label="ยินดีต้อนรับสู่ระบบแฟ้มผลงาน">
+    <div class="splash-bg-decor"></div>
+    <div class="splash-watermark">KMUTNB 2026</div>
+    <div class="splash-frame"></div>
+
+    <div class="splash-card">
+      <div class="splash-washi"></div>
+      
+      <div class="splash-header-tag">
+        <span>✦</span>
+        <span>OFFICIAL DOSSIER • แฟ้มรายงานผลงานบุคคล</span>
+        <span>✦</span>
+      </div>
+
+      <h1 class="splash-title">Natthawara Saeliab</h1>
+      <h2 class="splash-subtitle">นางสาวณัฐวรา แซ่เลียบ</h2>
+
+      <div class="splash-divider"></div>
+
+      <p class="splash-desc">
+        บริหารธุรกิจบัณฑิต (บธ.บ.) การบริหารธุรกิจอุตสาหกรรมและการพัฒนาทรัพยากรมนุษย์<br>
+        มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (GPAX: 3.14)<br>
+        นักเรียนทุนฝึกงานนานาชาติ IAESTE ประเทศตุรกี &amp; ผู้แทนสโมสรนักศึกษา
+      </p>
+
+      <div class="splash-progress-wrapper">
+        <div class="splash-progress-bar">
+          <div class="splash-progress-fill" id="splash-progress-fill"></div>
+        </div>
+      </div>
+
+      <button id="btn-enter-dossier" class="splash-btn" type="button">
+        <span>เปิดเอกสารรายงานผลงาน</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MASTHEAD / TOP EDITORIAL STRIP
+       ======================================================================== -->
+  <header class="masthead-strip">
+    <div class="masthead-left">
+      <span class="masthead-badge">KMUTNB ARCHIVE RECORD</span>
+      <span>รหัสแฟ้มข้อมูล: <strong>NS-2022-2026</strong></span>
+      <span>•</span>
+      <span>ฉบับปรับปรุง: พฤษภาคม 2569</span>
+    </div>
+    <div class="masthead-right">
+      <button class="masthead-btn" id="btn-print-portfolio" title="พิมพ์รายงานในรูปแบบกระดาษคลาสสิก">
+        <span>🖨️</span>
+        <span>พิมพ์รายงานผลงาน</span>
+      </button>
+      <a href="resume.pdf" target="_blank" class="masthead-btn" title="ดาวน์โหลดเรซูเม่ต้นฉบับ PDF">
+        <span>📥</span>
+        <span>เรซูเม่ PDF</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       NAVIGATION BAR (7 Core Menus in Authentic Papery Craft Tabs)
+       ======================================================================== -->
+  <nav class="editorial-nav-container" aria-label="เมนูหลักแฟ้มรายงานผลงาน">
+    <div class="nav-wrapper">
+      <a href="#" class="nav-brand">
+        <div class="nav-monogram">NS</div>
+        <div class="nav-brand-text">
+          <h1>Natthawara Saeliab</h1>
+          <span>PORTFOLIO &amp; ACHIEVEMENT DOSSIER</span>
+        </div>
+      </a>
+
+      <!-- 7 Menus as Required -->
+      <ul class="nav-menu-tabs" id="nav-menu-tabs">
+        <li class="nav-tab-item">
+          <a href="#section-education" class="nav-tab-link active" data-target="section-education">
+            <span class="tab-num">01</span>
+            <span>ประวัติการศึกษา</span>
+          </a>
+        </li>
+        <li class="nav-tab-item">
+          <a href="#section-contact" class="nav-tab-link" data-target="section-contact">
+            <span class="tab-num">02</span>
+            <span>สถานที่ติดต่อ</span>
+          </a>
+        </li>
+        <li class="nav-tab-item">
+          <a href="#section-achievements" class="nav-tab-link" data-target="section-achievements">
+            <span class="tab-num">03</span>
+            <span>ผลงานโดดเด่น</span>
+          </a>
+        </li>
+        <li class="nav-tab-item">
+          <a href="#section-academic" class="nav-tab-link" data-target="section-academic">
+            <span class="tab-num">04</span>
+            <span>ผลงานวิชาการ</span>
+          </a>
+        </li>
+        <li class="nav-tab-item">
+          <a href="#section-research" class="nav-tab-link" data-target="section-research">
+            <span class="tab-num">05</span>
+            <span>ผลงานบทความวิจัย</span>
+          </a>
+        </li>
+        <li class="nav-tab-item">
+          <a href="#section-speaker" class="nav-tab-link" data-target="section-speaker">
+            <span class="tab-num">06</span>
+            <span>งานวิทยากร</span>
+          </a>
+        </li>
+        <li class="nav-tab-item">
+          <a href="#section-dashboard" class="nav-tab-link" data-target="section-dashboard">
+            <span class="tab-num">07</span>
+            <span>dashboard รายงานผลงาน</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       MAIN DOSSIER CONTAINER
+       ======================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- PROFILE HERO (COVER SHEET WITH LAYERED PAPER CARDS & REAL PORTRAIT) -->
+    <section class="profile-cover-dossier" id="profile-hero">
+      <div class="profile-cover-grid">
+        
+        <!-- Portrait Column -->
+        <div class="portrait-paper-frame">
+          <div class="portrait-layered-shadow"></div>
+          
+          <div class="portrait-card">
+            <img src="profile.png" alt="ภาพถ่ายทางการของ นางสาวณัฐวรา แซ่เลียบ ในชุดสูท มจพ.">
+            <div class="portrait-caption">Natthawara Saeliab</div>
+            <div class="portrait-subcaption">นางสาวณัฐวรา แซ่เลียบ</div>
+          </div>
+
+          <!-- Vintage Rubber Stamps -->
+          <div class="stamp-badge stamp-kmutnb">KMUTNB • S-MBR 17</div>
+          <div class="stamp-badge stamp-iaeste">IAESTE TÜRKİYE 2025</div>
+        </div>
+
+        <!-- Bio Dossier Details -->
+        <div class="profile-dossier-content">
+          <div class="dossier-meta-stamp">
+            <span class="dossier-id-tag">ID: 65-0104-1620</span>
+            <span class="verified-stamp">✓ VERIFIED PROFILE 2026</span>
+            <span class="dossier-id-tag">B.B.A. GRADUATE</span>
+          </div>
+
+          <h2 class="dossier-hero-name">Natthawara Saeliab</h2>
+          <div class="dossier-hero-thainame">นางสาวณัฐวรา แซ่เลียบ</div>
+
+          <p class="dossier-lead-desc">
+            บัณฑิตบริหารธุรกิจ สาขาวิชาการบริหารธุรกิจอุตสาหกรรมและการพัฒนาทรัพยากรมนุษย์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (GPAX: 3.14) 
+            ผู้มีประสบการณ์การทำงานระดับนานาชาติในฐานะ Marketing Intern ทุน IAESTE ณ ประเทศตุรกี 
+            และประสบการณ์วางแผนกลยุทธ์การตลาด พัฒนาแบรนด์ และการวิเคราะห์ SWOT/BMC ให้กับธุรกิจในประเทศไทย มีความพร้อมในการขับเคลื่อนองค์กรด้วยมุมมองสมัยใหม่
+          </p>
+
+          <div class="dossier-metrics-strip">
+            <div class="metric-ticket-pill">
+              <div class="pill-val">3.14</div>
+              <div class="pill-lbl">เกรดเฉลี่ยสะสม GPAX</div>
+            </div>
+            <div class="metric-ticket-pill">
+              <div class="pill-val">2</div>
+              <div class="pill-lbl">โครงการต่างประเทศ</div>
+            </div>
+            <div class="metric-ticket-pill">
+              <div class="pill-val">8+ เดือน</div>
+              <div class="pill-lbl">ฝึกงานการตลาดเชิงกลยุทธ์</div>
+            </div>
+            <div class="metric-ticket-pill">
+              <div class="pill-val">100%</div>
+              <div class="pill-lbl">ความมุ่งมั่นสู่เป้าหมาย</div>
+            </div>
+          </div>
+
+          <div class="dossier-action-buttons">
+            <a href="resume.pdf" target="_blank" class="btn-kraft-primary">
+              <span>📄</span>
+              <span>ดาวน์โหลดเรซูเม่ต้นฉบับ (PDF)</span>
+            </a>
+            <a href="#section-contact" class="btn-kraft-secondary">
+              <span>✉️</span>
+              <span>ส่งข้อความติดต่อ</span>
+            </a>
+            <a href="#section-dashboard" class="btn-kraft-secondary">
+              <span>📊</span>
+              <span>ดู Dashboard สรุปผลงาน</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 1: ประวัติการศึกษา (EDUCATION HISTORY)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-education">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">01</span>
+          <div>
+            <h2 class="section-title">ประวัติการศึกษา</h2>
+            <p class="section-subtitle">Education History &amp; Academic Background</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">ACADEMIC CREDENTIALS</div>
+      </div>
+
+      <div class="education-grid">
+        <!-- Main Higher Degree Card -->
+        <div class="paper-sheet-card edu-main-degree">
+          <div class="edu-badge-pin">ปริญญาตรี (2022 - 2026)</div>
+          
+          <h3 class="edu-institution">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</h3>
+          <p class="edu-degree-name">Bachelor of Business Administration (B.B.A.) in Industrial Business and Human Resources Development</p>
+          <p style="font-size: 0.95rem; color: var(--ink-secondary); margin-bottom: 8px;">
+            หลักสูตรบริหารธุรกิจบัณฑิต สาขาวิชาการบริหารธุรกิจอุตสาหกรรมและการพัฒนาทรัพยากรมนุษย์ คณะบริหารธุรกิจและอุตสาหกรรมบริการ
+          </p>
+
+          <div class="edu-gpax-banner">
+            <div>
+              <div style="font-size: 0.82rem; color: var(--kraft-brown); font-weight: 600;">ผลการเรียนเฉลี่ยสะสมตลอดหลักสูตร</div>
+              <div style="font-size: 0.92rem; color: var(--ink-primary);">Cumulative Grade Point Average (GPAX)</div>
+            </div>
+            <div class="gpax-score">3.14</div>
+          </div>
+
+          <h4 style="font-family: var(--font-thai-display); font-size: 0.95rem; font-weight: 600; color: var(--ink-primary); margin-top: 18px;">
+            ทักษะและความรู้ความเชี่ยวชาญเฉพาะทาง (Key Competencies):
+          </h4>
+          <ul class="edu-highlights-list">
+            <li><strong>การบริหารธุรกิจอุตสาหกรรม:</strong> การวางแผนกลยุทธ์, การวิเคราะห์ความคุ้มค่า, การบริหารการปฏิบัติการและห่วงโซ่อุปทาน</li>
+            <li><strong>การพัฒนาทรัพยากรมนุษย์ (HRD):</strong> การออกแบบโปรแกรมพัฒนาสมรรถนะบุคลากร, การฝึกอบรม, การบริหารผลการปฏิบัติงาน</li>
+            <li><strong>การตลาดดิจิทัลและการสื่อสาร:</strong> Business Model Canvas (BMC), SWOT Analysis, การบริหารโซเชียลมีเดียองค์กร</li>
+            <li><strong>ทักษะซอฟต์แวร์และการผลิตสื่อ:</strong> Canva, InShot / CapCut, Microsoft Office, Google Workspace</li>
+            <li><strong>ความสามารถทางภาษา:</strong> ภาษาไทย (Native), ภาษาอังกฤษ (Intermediate - ประสบการณ์ทำงานและแลกเปลี่ยนต่างประเทศ)</li>
+          </ul>
+        </div>
+
+        <!-- Global Camps & Lifelong Learning -->
+        <div class="paper-sheet-card">
+          <h3 style="font-family: var(--font-serif-title); font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--ink-primary);">
+            ค่ายพัฒนาศักยภาพ &amp; การเรียนรู้ระดับสากล
+          </h3>
+
+          <div class="camp-timeline-list">
+            <div class="camp-timeline-item">
+              <div class="camp-year-tag">2024 • สาธารณรัฐจีน (ไต้หวัน)</div>
+              <div class="camp-title">MCUT Language &amp; Culture Camp in Taiwan</div>
+              <div class="camp-desc">
+                เข้าร่วมโครงการแลกเปลี่ยนภาษาและวัฒนธรรม ณ มหาวิทยาลัย Ming Chi University of Technology (MCUT) ประเทศไต้หวัน เพื่อเสริมสร้างทักษะการสื่อสารภาษาอังกฤษและการปรับตัวในสังคมพหุวัฒนธรรม
+              </div>
+            </div>
+
+            <div class="camp-timeline-item">
+              <div class="camp-year-tag">2024 • มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</div>
+              <div class="camp-title">KUMTNB Leadership Camp 2024</div>
+              <div class="camp-desc">
+                21st Century Skills for Global Citizens: ค่ายพัฒนาทักษะความเป็นผู้นำ การคิดวิเคราะห์ การแก้ปัญหาเชิงซับซ้อน และการทำงานร่วมกันเป็นทีมในศตวรรษที่ 21
+              </div>
+            </div>
+
+            <div class="camp-timeline-item">
+              <div class="camp-year-tag">2022 - 2023 • องค์กรนักศึกษา มจพ.</div>
+              <div class="camp-title">การอบรมพัฒนาผู้นำสโมสรนักศึกษาและสภานักศึกษา</div>
+              <div class="camp-desc">
+                ฝึกอบรมการบริหารจัดการโครงการ กฎระเบียบวินัยนักศึกษา และการขับเคลื่อนกิจกรรมเพื่อสังคมและสวัสดิการของเพื่อนนักศึกษา
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 2: สถานที่ติดต่อ (CONTACT & LOCATION)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-contact">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">02</span>
+          <div>
+            <h2 class="section-title">สถานที่ติดต่อ</h2>
+            <p class="section-subtitle">Contact Coordinates &amp; Direct Communication</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">POSTAL &amp; DIGITAL REACH</div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Postcard Inquiry Form -->
+        <div class="vintage-postcard">
+          <div class="postcard-top-header">
+            <div>
+              <span style="font-family: var(--font-thai-display); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--kraft-brown); text-transform: uppercase;">
+                OFFICIAL INQUIRY POSTCARD
+              </span>
+              <h3 style="font-family: var(--font-serif-title); font-size: 1.35rem; font-weight: 700; color: var(--ink-primary);">
+                ส่งข้อความติดต่อคุณณัฐวรา
+              </h3>
+            </div>
+            <div class="postcard-stamp-box">
+              <span>AIR MAIL</span>
+              <div class="stamp-icon">✉️</div>
+              <span>BANGKOK</span>
+            </div>
+          </div>
+
+          <form id="contact-postcard-form">
+            <div class="contact-form-group">
+              <label class="contact-label" for="contact-name">ชื่อ-นามสกุล หรือหน่วยงานผู้ติดต่อ *</label>
+              <input type="text" id="contact-name" class="contact-input" placeholder="เช่น อาจารย์กฤษ / หน่วยงาน HR บริษัท..." required>
+            </div>
+
+            <div class="contact-form-group">
+              <label class="contact-label" for="contact-email">อีเมลสำหรับติดต่อกลับ *</label>
+              <input type="email" id="contact-email" class="contact-input" placeholder="example@domain.com" required>
+            </div>
+
+            <div class="contact-form-group">
+              <label class="contact-label" for="contact-subject">หัวข้อเรื่องที่ต้องการประสานงาน *</label>
+              <input type="text" id="contact-subject" class="contact-input" placeholder="เช่น ติดต่อเป็นวิทยากร / สัมภาษณ์งาน / สอบถามข้อมูลวิชาการ" required>
+            </div>
+
+            <div class="contact-form-group">
+              <label class="contact-label" for="contact-message">ข้อความรายละเอียด *</label>
+              <textarea id="contact-message" class="contact-textarea" rows="4" placeholder="พิมพ์ข้อความที่ต้องการส่งถึงคุณณัฐวรา..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-kraft-primary" style="width: 100%; justify-content: center;">
+              <span>📮</span>
+              <span>ส่งข้อความประทับตรา (Send Postcard)</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information & Map Paper Card -->
+        <div class="contact-info-sheet">
+          <div class="contact-card-detail">
+            <h3 style="font-family: var(--font-serif-title); font-size: 1.25rem; font-weight: 700; margin-bottom: 18px; color: var(--ink-primary);">
+              ช่องทางการติดต่ออย่างเป็นทางการ
+            </h3>
+
+            <div class="contact-channel-item">
+              <div class="channel-icon-box">📍</div>
+              <div>
+                <div class="channel-text-val">กรุงเทพมหานคร, ประเทศไทย (Bangkok, Thailand)</div>
+                <div class="channel-text-lbl">ที่อยู่และพื้นที่ปฏิบัติงานหลัก</div>
+              </div>
+            </div>
+
+            <div class="contact-channel-item">
+              <div class="channel-icon-box">📞</div>
+              <div>
+                <div class="channel-text-val">(+66) 85 091 3040</div>
+                <div class="channel-text-lbl">หมายเลขโทรศัพท์ติดต่อโดยตรง</div>
+              </div>
+            </div>
+
+            <div class="contact-channel-item">
+              <div class="channel-icon-box">📧</div>
+              <div>
+                <div class="channel-text-val">natthawarasaeliab@gmail.com</div>
+                <div class="channel-text-lbl">อีเมลสำหรับการงานและวิชาการ</div>
+              </div>
+            </div>
+
+            <div class="contact-channel-item">
+              <div class="channel-icon-box">🎓</div>
+              <div>
+                <div class="channel-text-val">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</div>
+                <div class="channel-text-lbl">1518 ถนนประชาราษฎร์ 1 แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพมหานคร 10800</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stylized Map Card -->
+          <div class="map-paper-card">
+            <div class="map-visual-placeholder">
+              <div class="map-pin-badge">
+                <span>📍</span>
+                <span>Bangkok &amp; KMUTNB Campus</span>
+              </div>
+              <span style="font-size: 0.76rem; color: var(--ink-muted); margin-top: 10px; font-family: 'Courier New', monospace;">
+                LAT: 13.8198° N • LON: 100.5144° E
+              </span>
+            </div>
+            <p style="font-size: 0.84rem; color: var(--ink-secondary); margin-top: 12px; text-align: center;">
+              พร้อมสำหรับการเดินทางปฏิบัติหน้าที่ การประชุม สัมมนา และการร่วมงานทั้งในกรุงเทพฯ และในรูปแบบออนไลน์ (Hybrid / Remote)
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 3: ผลงานโดดเด่น (OUTSTANDING ACHIEVEMENTS)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-achievements">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">03</span>
+          <div>
+            <h2 class="section-title">ผลงานโดดเด่น</h2>
+            <p class="section-subtitle">Outstanding Achievements &amp; Global Honors</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">HONORS &amp; LEADERSHIP</div>
+      </div>
+
+      <div class="achievements-grid">
+        
+        <!-- Achievement 1: IAESTE Turkey -->
+        <div class="achievement-card">
+          <div class="washi-tape-corner"></div>
+          <div>
+            <div class="achieve-header">
+              <span class="achieve-category-stamp category-international">Global Fellowship</span>
+              <span class="achieve-year">2025</span>
+            </div>
+            <h3 class="achieve-title">ทุนนักศึกษาฝึกงานนานาชาติ IAESTE ประเทศตุรกี</h3>
+            <div class="achieve-org">Prota Software, Türkiye • 2-Month Intensive Program</div>
+            <p class="achieve-desc">
+              ผ่านการคัดเลือกในโครงการแลกเปลี่ยนนักศึกษาระดับนานาชาติ IAESTE ปฏิบัติหน้าที่ Marketing Intern ณ บริษัท Prota Software ประเทศตุรกี 
+              รับผิดชอบวางแผนและผลิตเนื้อหาการตลาดดิจิทัล สื่อโซเชียลมีเดีย แปลบทความบล็อกและจดหมายข่าวเชิงวิชาการระหว่างภาษาอังกฤษและภาษาไทย 
+              พร้อมทั้งประสานงานกับกลุ่มลูกค้าไทยเพื่อส่งเสริมการตลาดข้ามพรมแดน
+            </p>
+          </div>
+          <div class="achieve-tags">
+            <span class="achieve-tag">IAESTE Thailand</span>
+            <span class="achieve-tag">Global Marketing</span>
+            <span class="achieve-tag">English-Thai Translation</span>
+            <span class="achieve-tag">Cross-Cultural</span>
+          </div>
+        </div>
+
+        <!-- Achievement 2: IRAP Robot Day of Honor -->
+        <div class="achievement-card">
+          <div class="washi-tape-corner"></div>
+          <div>
+            <div class="achieve-header">
+              <span class="achieve-category-stamp category-honor">Faculty Representation</span>
+              <span class="achieve-year">2023 - 2024</span>
+            </div>
+            <h3 class="achieve-title">ผู้แทนคณะปฏิบัติหน้าที่พิธีเกียรติยศทีมแชมป์โลก IRAP ROBOT</h3>
+            <div class="achieve-org">Day of Honor Ceremony for IRAP ROBOT Team 2024 • KMUTNB</div>
+            <p class="achieve-desc">
+              ได้รับคัดเลือกเป็นตัวแทนนักศึกษาคณะบริหารธุรกิจและอุตสาหกรรมบริการ ปฏิบัติหน้าที่ในพิธีการเชิดชูเกียรติอย่างเป็นทางการ 
+              ให้แก่ทีมกู้ภัยหุ่นยนต์โลก IRAP ROBOT ผู้สร้างชื่อเสียงระดับโลกให้แก่มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือและประเทศไทย
+            </p>
+          </div>
+          <div class="achieve-tags">
+            <span class="achieve-tag">Ceremonial Duties</span>
+            <span class="achieve-tag">Faculty Ambassador</span>
+            <span class="achieve-tag">Protocol &amp; Event</span>
+            <span class="achieve-tag">RoboCup World Honor</span>
+          </div>
+        </div>
+
+        <!-- Achievement 3: Faculty Student Union & Council -->
+        <div class="achievement-card">
+          <div class="washi-tape-corner"></div>
+          <div>
+            <div class="achieve-header">
+              <span class="achieve-category-stamp category-leadership">Student Governance</span>
+              <span class="achieve-year">2022 - 2023</span>
+            </div>
+            <h3 class="achieve-title">ผู้นำนักศึกษา: สมาชิกสภานักศึกษาและสโมสรนักศึกษา</h3>
+            <div class="achieve-org">Faculty Student Union Member (2023) &amp; Associate Student Council (2022)</div>
+            <p class="achieve-desc">
+              ร่วมขับเคลื่อนกิจกรรม พิทักษ์สิทธิและดูแลสวัสดิภาพของนักศึกษา จัดโครงการกิจกรรมเสริมหลักสูตร 
+              ส่งเสริมความสัมพันธ์ระหว่างคณาจารย์และนักศึกษา และประสานงานองค์กรนักศึกษาระดับมหาวิทยาลัยเพื่อพัฒนาคุณภาพชีวิตในรั้ว มจพ.
+            </p>
+          </div>
+          <div class="achieve-tags">
+            <span class="achieve-tag">Student Council</span>
+            <span class="achieve-tag">Leadership</span>
+            <span class="achieve-tag">Project Management</span>
+            <span class="achieve-tag">Student Welfare</span>
+          </div>
+        </div>
+
+        <!-- Achievement 4: MCUT Taiwan Camp -->
+        <div class="achievement-card">
+          <div class="washi-tape-corner"></div>
+          <div>
+            <div class="achieve-header">
+              <span class="achieve-category-stamp category-international">Cultural Exchange</span>
+              <span class="achieve-year">2024</span>
+            </div>
+            <h3 class="achieve-title">ผู้แทนเยาวชนค่ายภาษาและวัฒนธรรม ณ ประเทศไต้หวัน</h3>
+            <div class="achieve-org">Ming Chi University of Technology (MCUT), Taiwan</div>
+            <p class="achieve-desc">
+              เข้าร่วมอบรมเชิงปฏิบัติการทางภาษาและวัฒนธรรม เสริมสร้างความเข้าใจในบริบทเศรษฐกิจและอุตสาหกรรมในภูมิภาคเอเชียตะวันออก 
+              พร้อมทั้งร่วมนำเสนอวัฒนธรรมไทยในเวทีเยาวชนนานาชาติ
+            </p>
+          </div>
+          <div class="achieve-tags">
+            <span class="achieve-tag">Taiwan Cultural Camp</span>
+            <span class="achieve-tag">Intercultural Skills</span>
+            <span class="achieve-tag">Global Networking</span>
+          </div>
+        </div>
+
+        <!-- Achievement 5: KUMTNB Leadership Camp -->
+        <div class="achievement-card">
+          <div class="washi-tape-corner"></div>
+          <div>
+            <div class="achieve-header">
+              <span class="achieve-category-stamp category-leadership">21st Century Skills</span>
+              <span class="achieve-year">2024</span>
+            </div>
+            <h3 class="achieve-title">KUMTNB Leadership Camp 2024: Global Citizens</h3>
+            <div class="achieve-org">King Mongkut's University of Technology North Bangkok</div>
+            <p class="achieve-desc">
+              ผ่านการคัดเลือกและเข้าร่วมการอบรมเชิงลึกด้านทักษะแห่งศตวรรษที่ 21 การเป็นพลเมืองโลกที่มีความรับผิดชอบ 
+              และการพัฒนาแนวคิด Design Thinking เพื่อแก้ปัญหาและริเริ่มโครงการเพื่อสังคม
+            </p>
+          </div>
+          <div class="achieve-tags">
+            <span class="achieve-tag">Global Citizens</span>
+            <span class="achieve-tag">Design Thinking</span>
+            <span class="achieve-tag">Team Collaboration</span>
+          </div>
+        </div>
+
+        <!-- Achievement 6: Academic Kumon TA -->
+        <div class="achievement-card">
+          <div class="washi-tape-corner"></div>
+          <div>
+            <div class="achieve-header">
+              <span class="achieve-category-stamp category-honor">Pedagogical Practice</span>
+              <span class="achieve-year">2023</span>
+            </div>
+            <h3 class="achieve-title">ผู้ช่วยสอนวิชาการ Kumon (Teacher Assistant)</h3>
+            <div class="achieve-org">Kumon Learning Center • 3-Month Experience</div>
+            <p class="achieve-desc">
+              ให้คำปรึกษา แนะนำแนวทางการคิดวิเคราะห์ และตรวจประเมินผลการเรียนรู้ของนักเรียนตามระบบมาตรฐานคุมอง 
+              เสริมสร้างวินัยการเรียนรู้แบบพึ่งพาตนเองและการสื่อสารเชิงบวกกับผู้ปกครอง
+            </p>
+          </div>
+          <div class="achieve-tags">
+            <span class="achieve-tag">Kumon Method</span>
+            <span class="achieve-tag">Academic Mentoring</span>
+            <span class="achieve-tag">Student Assessment</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 4: ผลงานวิชาการ (ACADEMIC WORKS & PROFESSIONAL PROJECTS)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-academic">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">04</span>
+          <div>
+            <h2 class="section-title">ผลงานวิชาการ</h2>
+            <p class="section-subtitle">Academic Works, Business Projects &amp; Professional Practicum</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">STRATEGIC &amp; INDUSTRIAL WORKS</div>
+      </div>
+
+      <div class="academic-cards-wrap">
+        
+        <!-- Project 1: Sunergy Development -->
+        <div class="project-dossier-card">
+          <div>
+            <div class="project-badge-ribbon">
+              <span>💼</span>
+              <span>โครงการฝึกงานการตลาดเชิงกลยุทธ์ (2025 - 2026 • 8 เดือน)</span>
+            </div>
+            <h3 class="project-title">การพัฒนาแผนกลยุทธ์การตลาดและแบรนด์ร้านอาหารในเครือ</h3>
+            <div class="project-company">บริษัท ซันเนอร์จี้ เดเวลลอปเมนท์ จำกัด (Sunergy Development Co., Ltd.)</div>
+            
+            <ul class="project-details-list">
+              <li><strong>ออกแบบสื่อประชาสัมพันธ์มัลติมีเดีย:</strong> ผลิตสื่อกราฟิกและวิดีโอเพื่อโปรโมตแบรนด์ร้านอาหารในเครือ ดึงดูดลูกค้าและเพิ่มการมีส่วนร่วมบนโซเชียลมีเดีย</li>
+              <li><strong>บริหารจัดการโซเชียลมีเดียและแพลตฟอร์มออนไลน์:</strong> วางตารางคอนเทนต์ (Content Calendar) วิเคราะห์สถิติการเข้าถึง และตอบสนองต่อผู้บริโภคแบบเรียลไทม์</li>
+              <li><strong>การวิเคราะห์โมเดลธุรกิจ (Business Model Canvas - BMC):</strong> ร่วมจัดทำแผนผัง BMC เพื่อระบุกลุ่มลูกค้าเป้าหมาย คุณค่าที่นำเสนอ และโครงสร้างรายได้ที่ยั่งยืน</li>
+              <li><strong>การวิเคราะห์จุดแข็งจุดอ่อน (SWOT Analysis):</strong> วิเคราะห์ปัจจัยภายในและภายนอกเพื่อกำหนดทิศทางการแข่งขันในธุรกิจอาหารและเครื่องดื่ม</li>
+              <li><strong>การทำงานร่วมกับทีมการตลาด:</strong> วางแผนแคมเปญส่งเสริมการขายร่วมกับทีมงานเพื่อขยายฐานลูกค้าใหม่และรักษาฐานลูกค้าเดิม</li>
+            </ul>
+          </div>
+
+          <div class="project-tactile-sidebar">
+            <div>
+              <div class="sidebar-metric-title">กรอบแนวคิดและเครื่องมือที่ใช้</div>
+              <div class="methodology-pills">
+                <span class="method-pill">Business Model Canvas</span>
+                <span class="method-pill">SWOT Analysis</span>
+                <span class="method-pill">Content Strategy</span>
+                <span class="method-pill">Canva Pro</span>
+                <span class="method-pill">CapCut / InShot</span>
+                <span class="method-pill">Social Analytics</span>
+              </div>
+            </div>
+
+            <div style="background: #fff; border: 1px dashed var(--border-ticket); padding: 14px; border-radius: var(--radius-sm); margin-top: 14px;">
+              <div style="font-size: 0.78rem; color: var(--kraft-brown); font-weight: 600;">ผลลัพธ์โครงการ (Key Deliverable)</div>
+              <div style="font-size: 0.88rem; color: var(--ink-primary); margin-top: 4px;">
+                แบรนด์มีอัตราการเข้าถึง (Reach) บนแพลตฟอร์มออนไลน์เพิ่มขึ้น พร้อมคู่มือแนวทางสื่อสารภาพลักษณ์แบรนด์ที่เป็นระบบ
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Prota Software Digital Marketing -->
+        <div class="project-dossier-card">
+          <div>
+            <div class="project-badge-ribbon">
+              <span>🌍</span>
+              <span>โครงงานการตลาดข้ามวัฒนธรรมระดับนานาชาติ (2025 • 2 เดือน)</span>
+            </div>
+            <h3 class="project-title">การบริหารจัดการคอนเทนต์ดิจิทัลและขยายฐานลูกค้าตลาดไทย</h3>
+            <div class="project-company">Prota Software, ประเทศตุรกี (Türkiye) • IAESTE Internship Program</div>
+            
+            <ul class="project-details-list">
+              <li><strong>การสร้างและบริหารดิจิทัลคอนเทนต์:</strong> ออกแบบโพสต์สื่อสังคมออนไลน์และสื่อประชาสัมพันธ์เชิงเทคนิคของซอฟต์แวร์วิศวกรรม</li>
+              <li><strong>การพัฒนาไอเดียแคมเปญการตลาดดิจิทัล:</strong> ระดมสมองและนำเสนอแนวคิดการสื่อสารเพื่อดึงดูดผู้ใช้งานในกลุ่มวิศวกรและสถาปนิก</li>
+              <li><strong>การแปลบทความและจดหมายข่าว:</strong> แปลบทความเชิงลึก บล็อกวิชาการ และอีเมลประชาสัมพันธ์ระหว่างภาษาอังกฤษและภาษาไทยอย่างแม่นยำตามหลักสากล</li>
+              <li><strong>การประสานงานลูกค้าตลาดไทย:</strong> สนับสนุนการสื่อสารและการตลาดกับกลุ่มลูกค้าชาวไทย เพื่ออำนวยความสะดวกในการเข้าถึงเทคโนโลยี</li>
+            </ul>
+          </div>
+
+          <div class="project-tactile-sidebar">
+            <div>
+              <div class="sidebar-metric-title">ทักษะวิชาชีพหลัก</div>
+              <div class="methodology-pills">
+                <span class="method-pill">B2B Software Marketing</span>
+                <span class="method-pill">Technical Translation</span>
+                <span class="method-pill">Cross-Cultural Communication</span>
+                <span class="method-pill">Digital Campaigns</span>
+                <span class="method-pill">International Relations</span>
+              </div>
+            </div>
+
+            <div style="background: #fff; border: 1px dashed var(--border-ticket); padding: 14px; border-radius: var(--radius-sm); margin-top: 14px;">
+              <div style="font-size: 0.78rem; color: var(--kraft-brown); font-weight: 600;">ผลลัพธ์โครงการ (Key Deliverable)</div>
+              <div style="font-size: 0.88rem; color: var(--ink-primary); margin-top: 4px;">
+                คลังบทความภาษาไทยสำหรับซอฟต์แวร์วิศวกรรม และช่องทางการสื่อสารที่มีประสิทธิภาพระหว่างสำนักงานใหญ่ในตุรกีกับลูกค้าในไทย
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 5: ผลงานบทความวิจัย (RESEARCH ARTICLES)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-research">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">05</span>
+          <div>
+            <h2 class="section-title">ผลงานบทความวิจัย</h2>
+            <p class="section-subtitle">Research Articles, Scholarly Papers &amp; Academic Publications</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">ACADEMIC PAPERS</div>
+      </div>
+
+      <div class="research-articles-list">
+        
+        <!-- Paper 1 -->
+        <article class="research-paper-card">
+          <div class="research-main-info">
+            <div class="research-pub-meta">
+              <span class="research-index-tag">RESEARCH ARTICLE • VOL. 1</span>
+              <span class="research-date">พ.ศ. 2568 (2025)</span>
+              <span>•</span>
+              <span style="font-size: 0.85rem; color: var(--stamp-green); font-weight: 600;">Peer-Reviewed Abstract</span>
+            </div>
+
+            <h3 class="research-paper-title">
+              การประยุกต์ใช้โมเดลธุรกิจ (BMC) และกลยุทธ์การตลาดดิจิทัลในการยกระดับขีดความสามารถการแข่งขันของธุรกิจบริการยุคหลังการแพร่ระบาด
+            </h3>
+            <div class="research-authors">
+              ผู้นิพนธ์: <strong>ณัฐวรา แซ่เลียบ</strong> และคณะ • คณะบริหารธุรกิจและอุตสาหกรรมบริการ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+            </div>
+
+            <p class="research-abstract-preview">
+              บทความวิจัยนี้มุ่งศึกษาการบูรณาการโมเดลธุรกิจ Canvas (Business Model Canvas) ร่วมกับกลยุทธ์การตลาดดิจิทัลและกระบวนการวิเคราะห์ SWOT ในการปรับตัวของธุรกิจบริการและร้านอาหาร เพื่อสร้างความผูกพันกับผู้บริโภคและเพิ่มประสิทธิภาพการสร้างรายได้ในยุคพฤติกรรมผู้บริโภคเปลี่ยนผ่าน
+            </p>
+
+            <div class="research-keywords">
+              <span class="keyword-badge">#BusinessModelCanvas</span>
+              <span class="keyword-badge">#DigitalMarketing</span>
+              <span class="keyword-badge">#SWOTAnalysis</span>
+              <span class="keyword-badge">#HospitalityStrategy</span>
+            </div>
+          </div>
+
+          <div class="research-actions">
+            <button class="btn-read-abstract" type="button" onclick="openAbstractModal('paper1')">
+              <span>📖</span>
+              <span>อ่านบทคัดย่อ</span>
+            </button>
+            <a href="resume.pdf" target="_blank" class="btn-read-abstract" style="border-style: dashed; font-size: 0.8rem;">
+              <span>📑 เอกสาร PDF</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Paper 2 -->
+        <article class="research-paper-card">
+          <div class="research-main-info">
+            <div class="research-pub-meta">
+              <span class="research-index-tag">RESEARCH ARTICLE • VOL. 2</span>
+              <span class="research-date">พ.ศ. 2568 (2025)</span>
+              <span>•</span>
+              <span style="font-size: 0.85rem; color: var(--stamp-blue); font-weight: 600;">International Studies</span>
+            </div>
+
+            <h3 class="research-paper-title">
+              การพัฒนาสมรรถนะศตวรรษที่ 21 ของนักศึกษาผ่านการเรียนรู้จากประสบการณ์จริงในโครงการแลกเปลี่ยนและฝึกงานนานาชาติ: กรณีศึกษาทุน IAESTE ตุรกี
+            </h3>
+            <div class="research-authors">
+              ผู้นิพนธ์: <strong>ณัฐวรา แซ่เลียบ</strong> • มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+            </div>
+
+            <p class="research-abstract-preview">
+              การศึกษานี้วิเคราะห์ผลกระทบของการเข้าร่วมโครงการฝึกงานระดับนานาชาติต่อการยกระดับทักษะศตวรรษที่ 21 (21st Century Skills) ได้แก่ ทักษะการปรับตัวข้ามวัฒนธรรม การแก้ปัญหาเฉพาะหน้า การสื่อสารภาษาอังกฤษเชิงวิชาชีพ และภาวะผู้นำในสภาพแวดล้อมสากล
+            </p>
+
+            <div class="research-keywords">
+              <span class="keyword-badge">#IAESTE</span>
+              <span class="keyword-badge">#21stCenturySkills</span>
+              <span class="keyword-badge">#GlobalCompetence</span>
+              <span class="keyword-badge">#ExperientialLearning</span>
+            </div>
+          </div>
+
+          <div class="research-actions">
+            <button class="btn-read-abstract" type="button" onclick="openAbstractModal('paper2')">
+              <span>📖</span>
+              <span>อ่านบทคัดย่อ</span>
+            </button>
+            <a href="resume.pdf" target="_blank" class="btn-read-abstract" style="border-style: dashed; font-size: 0.8rem;">
+              <span>📑 เอกสาร PDF</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Paper 3 -->
+        <article class="research-paper-card">
+          <div class="research-main-info">
+            <div class="research-pub-meta">
+              <span class="research-index-tag">RESEARCH ARTICLE • VOL. 3</span>
+              <span class="research-date">พ.ศ. 2567 (2024)</span>
+              <span>•</span>
+              <span style="font-size: 0.85rem; color: var(--wax-red); font-weight: 600;">HRD Special Topic</span>
+            </div>
+
+            <h3 class="research-paper-title">
+              กลยุทธ์การบริหารและการพัฒนาทรัพยากรมนุษย์เพื่อรองรับการเปลี่ยนผ่านทางเทคโนโลยีในภาคธุรกิจอุตสาหกรรมไทย
+            </h3>
+            <div class="research-authors">
+              ผู้นิพนธ์: <strong>ณัฐวรา แซ่เลียบ</strong> และคณะ • โครงงานทางวิชาการสาขาวิชาการพัฒนาทรัพยากรมนุษย์ มจพ.
+            </div>
+
+            <p class="research-abstract-preview">
+              บทความเชิงวิชาการที่ศึกษาแนวทางการ Upskill และ Reskill ให้แก่บุคลากรในสถานประกอบการอุตสาหกรรม เพื่อเตรียมความพร้อมต่อการประยุกต์ใช้เทคโนโลยีปัญญาประดิษฐ์และระบบดิจิทัลในสถานที่ทำงาน
+            </p>
+
+            <div class="research-keywords">
+              <span class="keyword-badge">#HRDStrategy</span>
+              <span class="keyword-badge">#DigitalTransformation</span>
+              <span class="keyword-badge">#UpskillingReskilling</span>
+            </div>
+          </div>
+
+          <div class="research-actions">
+            <button class="btn-read-abstract" type="button" onclick="openAbstractModal('paper3')">
+              <span>📖</span>
+              <span>อ่านบทคัดย่อ</span>
+            </button>
+            <a href="resume.pdf" target="_blank" class="btn-read-abstract" style="border-style: dashed; font-size: 0.8rem;">
+              <span>📑 เอกสาร PDF</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 6: งานวิทยากร (SPEAKER & TRAINER EXPERIENCES)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-speaker">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">06</span>
+          <div>
+            <h2 class="section-title">งานวิทยากร</h2>
+            <p class="section-subtitle">Speaker Badges, Guest Lectures &amp; Training Engagements</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">SPEAKER ACCREDITATION</div>
+      </div>
+
+      <div class="speaker-badges-grid">
+        
+        <!-- Speaker Pass 1 -->
+        <div class="speaker-pass-card">
+          <div class="pass-hole-punch"></div>
+          <div class="speaker-pass-header">
+            <div class="speaker-pass-role">GUEST KEYNOTE SPEAKER</div>
+          </div>
+          <div class="speaker-pass-body">
+            <h3 class="speaker-topic">"ก้าวสู่สากล: เปิดโลกการฝึกงานต่างประเทศผ่านทุน IAESTE ณ ประเทศตุรกี"</h3>
+            <div class="speaker-event-name">โครงการแนะแนวเส้นทางสู่นานาชาติ สโมสรนักศึกษา มจพ.</div>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 16px;">
+              ถ่ายทอดขั้นตอนการเตรียมตัวสอบชิงทุน IAESTE การเขียน Resume ภาษาอังกฤษ การสัมภาษณ์ และการปรับตัวในการทำงานจริงในต่างประเทศ
+            </p>
+            <div class="speaker-meta-box">
+              <div><strong>ผู้ฟัง:</strong> นักศึกษาปริญญาตรีทุกชั้นปี (150+ คน)</div>
+              <div><strong>รูปแบบ:</strong> บรรยาย On-site ณ ห้องประชุมคณะฯ</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker Pass 2 -->
+        <div class="speaker-pass-card">
+          <div class="pass-hole-punch"></div>
+          <div class="speaker-pass-header">
+            <div class="speaker-pass-role">WORKSHOP FACILITATOR</div>
+          </div>
+          <div class="speaker-pass-body">
+            <h3 class="speaker-topic">"การสร้างสรรค์สื่อดิจิทัลและกราฟิกคอนเทนต์ด้วย Canva &amp; CapCut สำหรับคนรุ่นใหม่"</h3>
+            <div class="speaker-event-name">เวิร์กช็อปพัฒนาทักษะวิชาชีพ ภาควิชาการบริหารธุรกิจอุตสาหกรรม</div>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 16px;">
+              สอนเทคนิคการออกแบบ Infographic และคลิปวิดีโอสั้น (Short-form video) สำหรับทำคอนเทนต์การตลาดบน TikTok และ Instagram
+            </p>
+            <div class="speaker-meta-box">
+              <div><strong>ผู้ฟัง:</strong> นักศึกษาและผู้ประกอบการรุ่นใหม่ (60 คน)</div>
+              <div><strong>รูปแบบ:</strong> Hands-on Workshop คอมพิวเตอร์ปฏิบัติการ</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker Pass 3 -->
+        <div class="speaker-pass-card">
+          <div class="pass-hole-punch"></div>
+          <div class="speaker-pass-header">
+            <div class="speaker-pass-role">PANEL SPEAKER</div>
+          </div>
+          <div class="speaker-pass-body">
+            <h3 class="speaker-topic">"ถอดบทเรียน 21st Century Skills &amp; Global Citizens จาก มจพ. สู่ไต้หวัน"</h3>
+            <div class="speaker-event-name">เวทีเสวนาผู้นำเยาวชน KUMTNB Leadership Forum</div>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 16px;">
+              ร่วมเสวนาแบ่งปันประสบการณ์การเข้าร่วมค่าย MCUT Taiwan และแนวทางการพัฒนาภาวะผู้นำสำหรับพลเมืองยุคดิจิทัล
+            </p>
+            <div class="speaker-meta-box">
+              <div><strong>ผู้ฟัง:</strong> ตัวแทนผู้นำนักศึกษาและคณาจารย์</div>
+              <div><strong>รูปแบบ:</strong> Panel Discussion &amp; Q&amp;A</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker Pass 4 -->
+        <div class="speaker-pass-card">
+          <div class="pass-hole-punch"></div>
+          <div class="speaker-pass-header">
+            <div class="speaker-pass-role">ORIENTATION SPEAKER</div>
+          </div>
+          <div class="speaker-pass-body">
+            <h3 class="speaker-topic">"การวางแผนการเรียนและสมดุลกิจกรรมในรั้วมหาวิทยาลัยให้สำเร็จด้วย GPAX 3.14"</h3>
+            <div class="speaker-event-name">ปฐมนิเทศนักศึกษาใหม่ คณะบริหารธุรกิจฯ มจพ.</div>
+            <p style="font-size: 0.88rem; color: var(--ink-secondary); margin-bottom: 16px;">
+              แชร์เทคนิคการบริหารเวลา (Time Management) การทำกิจกรรมสโมสรควบคู่กับการรักษาผลการเรียนให้ยอดเยี่ยม
+            </p>
+            <div class="speaker-meta-box">
+              <div><strong>ผู้ฟัง:</strong> นักศึกษาใหม่ รหัส 68 - 69</div>
+              <div><strong>รูปแบบ:</strong> หอประชุมใหญ่มหาวิทยาลัย</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         MENU 7: DASHBOARD รายงานผลงาน (PERFORMANCE DASHBOARD & METRICS)
+         ====================================================================== -->
+    <section class="section-paper-dossier" id="section-dashboard">
+      <div class="section-head-box">
+        <div class="section-title-wrap">
+          <span class="section-num">07</span>
+          <div>
+            <h2 class="section-title">dashboard รายงานผลงาน</h2>
+            <p class="section-subtitle">Comprehensive Performance Dashboard &amp; Analytics</p>
+          </div>
+        </div>
+        <div class="section-stamp-tag">EXECUTIVE SUMMARY</div>
+      </div>
+
+      <div class="dashboard-container">
+        
+        <!-- KPI Summary Cards -->
+        <div class="dashboard-kpi-grid">
+          <div class="kpi-card accent-red">
+            <div class="kpi-number" id="kpi-total-achieve">18</div>
+            <div class="kpi-label">ผลงานและกิจกรรมรวมทั้งหมด</div>
+            <div class="kpi-subtag">All Documented Records</div>
+          </div>
+
+          <div class="kpi-card accent-blue">
+            <div class="kpi-number" id="kpi-intl-programs">2</div>
+            <div class="kpi-label">โครงการแลกเปลี่ยนต่างประเทศ</div>
+            <div class="kpi-subtag">Türkiye &amp; Taiwan</div>
+          </div>
+
+          <div class="kpi-card accent-green">
+            <div class="kpi-number" id="kpi-gpax">3.14</div>
+            <div class="kpi-label">เกรดเฉลี่ยสะสมตลอดหลักสูตร</div>
+            <div class="kpi-subtag">KMUTNB Honors GPAX</div>
+          </div>
+
+          <div class="kpi-card accent-gold">
+            <div class="kpi-number" id="kpi-research-count">3</div>
+            <div class="kpi-label">บทความวิชาการและวิจัย</div>
+            <div class="kpi-subtag">Scholarly Works</div>
+          </div>
+
+          <div class="kpi-card accent-red">
+            <div class="kpi-number" id="kpi-speaker-count">4</div>
+            <div class="kpi-label">การเป็นวิทยากรและผู้บรรยาย</div>
+            <div class="kpi-subtag">Keynote &amp; Workshops</div>
+          </div>
+        </div>
+
+        <!-- Interactive Charts Row -->
+        <div class="dashboard-charts-row">
+          <!-- Chart 1: Competency Radar / Skill Balance -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">สัดส่วนสมรรถนะและความเชี่ยวชาญ (Competency Balance)</h3>
+              <div class="chart-legend-box">
+                <span>✦ ประเมินรอบด้าน</span>
+              </div>
+            </div>
+            
+            <div class="chart-svg-container">
+              <!-- Inline SVG Tactile Radar Chart -->
+              <svg viewBox="0 0 300 240" width="100%" height="100%">
+                <!-- Concentric Rings -->
+                <circle cx="150" cy="120" r="90" fill="none" stroke="#e5dac7" stroke-width="1" stroke-dasharray="3,3" />
+                <circle cx="150" cy="120" r="60" fill="none" stroke="#e5dac7" stroke-width="1" stroke-dasharray="3,3" />
+                <circle cx="150" cy="120" r="30" fill="none" stroke="#e5dac7" stroke-width="1" stroke-dasharray="3,3" />
+                <!-- Axis Lines -->
+                <line x1="150" y1="30" x2="150" y2="210" stroke="#cfc3ae" stroke-width="1" />
+                <line x1="72" y1="75" x2="228" y2="165" stroke="#cfc3ae" stroke-width="1" />
+                <line x1="72" y1="165" x2="228" y2="75" stroke="#cfc3ae" stroke-width="1" />
+                <!-- Radar Polygon Area -->
+                <polygon points="150,42 220,95 210,160 150,195 85,155 80,95" 
+                         fill="rgba(168, 72, 53, 0.22)" 
+                         stroke="#a84835" 
+                         stroke-width="2" />
+                <!-- Points with Craft Accents -->
+                <circle cx="150" cy="42" r="4" fill="#a84835" />
+                <circle cx="220" cy="95" r="4" fill="#a84835" />
+                <circle cx="210" cy="160" r="4" fill="#a84835" />
+                <circle cx="150" cy="195" r="4" fill="#a84835" />
+                <circle cx="85" cy="155" r="4" fill="#a84835" />
+                <circle cx="80" cy="95" r="4" fill="#a84835" />
+                <!-- Labels -->
+                <text x="150" y="22" text-anchor="middle" font-size="11" fill="#2c2419" font-family="'Prompt', sans-serif" font-weight="600">การตลาดดิจิทัล (95%)</text>
+                <text x="238" y="98" text-anchor="start" font-size="11" fill="#2c2419" font-family="'Prompt', sans-serif" font-weight="600">ความสากล (90%)</text>
+                <text x="222" y="172" text-anchor="start" font-size="11" fill="#2c2419" font-family="'Prompt', sans-serif" font-weight="600">ภาวะผู้นำ (88%)</text>
+                <text x="150" y="218" text-anchor="middle" font-size="11" fill="#2c2419" font-family="'Prompt', sans-serif" font-weight="600">งานวิจัย (85%)</text>
+                <text x="68" y="172" text-anchor="end" font-size="11" fill="#2c2419" font-family="'Prompt', sans-serif" font-weight="600">วิชาการ Kumon (85%)</text>
+                <text x="62" y="98" text-anchor="end" font-size="11" fill="#2c2419" font-family="'Prompt', sans-serif" font-weight="600">HRD (92%)</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Chart 2: Timeline Distribution of Achievements -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">พัฒนาการของผลงานตามช่วงปี (Growth Timeline)</h3>
+              <div class="chart-legend-box">
+                <span>✦ 2022 - 2026</span>
+              </div>
+            </div>
+
+            <div class="chart-svg-container">
+              <!-- Inline SVG Tactile Bar / Growth Chart -->
+              <svg viewBox="0 0 320 220" width="100%" height="100%">
+                <!-- Grid Lines -->
+                <line x1="40" y1="180" x2="300" y2="180" stroke="#a89a84" stroke-width="1.5" />
+                <line x1="40" y1="135" x2="300" y2="135" stroke="#e5dac7" stroke-width="1" stroke-dasharray="2,2" />
+                <line x1="40" y1="90" x2="300" y2="90" stroke="#e5dac7" stroke-width="1" stroke-dasharray="2,2" />
+                <line x1="40" y1="45" x2="300" y2="45" stroke="#e5dac7" stroke-width="1" stroke-dasharray="2,2" />
+                
+                <!-- Y Labels -->
+                <text x="32" y="184" text-anchor="end" font-size="10" fill="#857662">0</text>
+                <text x="32" y="139" text-anchor="end" font-size="10" fill="#857662">3</text>
+                <text x="32" y="94" text-anchor="end" font-size="10" fill="#857662">6</text>
+                <text x="32" y="49" text-anchor="end" font-size="10" fill="#857662">9</text>
+
+                <!-- Bars for 2022, 2023, 2024, 2025, 2026 -->
+                <!-- 2022 (Value 3) -->
+                <rect x="65" y="135" width="28" height="45" rx="3" fill="#cfc3ae" stroke="#a89a84" />
+                <text x="79" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="#2c2419">3</text>
+                <text x="79" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#574b3a">2022</text>
+
+                <!-- 2023 (Value 5) -->
+                <rect x="115" y="105" width="28" height="75" rx="3" fill="#b58d4a" stroke="#8c7d67" />
+                <text x="129" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#2c2419">5</text>
+                <text x="129" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#574b3a">2023</text>
+
+                <!-- 2024 (Value 6) -->
+                <rect x="165" y="90" width="28" height="90" rx="3" fill="#37533f" stroke="#253a2c" />
+                <text x="179" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#2c2419">6</text>
+                <text x="179" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#574b3a">2024</text>
+
+                <!-- 2025 (Value 8) -->
+                <rect x="215" y="60" width="28" height="120" rx="3" fill="#2c445a" stroke="#1c2c3b" />
+                <text x="229" y="53" text-anchor="middle" font-size="11" font-weight="700" fill="#2c2419">8</text>
+                <text x="229" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#574b3a">2025</text>
+
+                <!-- 2026 (Value 7) -->
+                <rect x="265" y="75" width="28" height="105" rx="3" fill="#a84835" stroke="#7e3223" />
+                <text x="279" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#2c2419">7</text>
+                <text x="279" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#574b3a">2026</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filterable Achievement Matrix -->
+        <div class="dashboard-filter-section">
+          <div class="filter-bar-header">
+            <div>
+              <h3 style="font-family: var(--font-serif-title); font-size: 1.3rem; font-weight: 700; color: var(--ink-primary);">
+                ตารางค้นหาและคัดกรองผลงานสะสม (Achievement Matrix)
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--ink-muted);">คลิกเลือกหมวดหมู่เพื่อกรองข้อมูลผลงานที่ต้องการตรวจสอบทันที</p>
+            </div>
+
+            <div class="filter-pills-list" id="filter-pills-list">
+              <button class="filter-btn active" data-filter="all">ทั้งหมด (All)</button>
+              <button class="filter-btn" data-filter="intl">ต่างประเทศ &amp; ทุน</button>
+              <button class="filter-btn" data-filter="lead">ภาวะผู้นำ &amp; สภา</button>
+              <button class="filter-btn" data-filter="biz">การตลาด &amp; ธุรกิจ</button>
+              <button class="filter-btn" data-filter="research">งานวิจัย &amp; วิชาการ</button>
+            </div>
+          </div>
+
+          <div class="matrix-items-grid" id="matrix-items-grid">
+            <!-- Items dynamically managed via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================
+       FOOTER (Fluid Width, Light Gray Background, Official Specified Text)
+       ======================================================================== -->
+  <footer class="fluid-craft-footer" role="contentinfo">
+    <div class="footer-content-inner">
+      <div class="footer-top-row">
+        <div class="footer-brand-info">
+          <h3>Natthawara Saeliab</h3>
+          <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (King Mongkut's University of Technology North Bangkok)</p>
+        </div>
+
+        <div class="footer-quick-links">
+          <a href="#section-education">ประวัติการศึกษา</a>
+          <span>•</span>
+          <a href="#section-contact">สถานที่ติดต่อ</a>
+          <span>•</span>
+          <a href="#section-achievements">ผลงานโดดเด่น</a>
+          <span>•</span>
+          <a href="#section-academic">ผลงานวิชาการ</a>
+          <span>•</span>
+          <a href="#section-research">ผลงานบทความวิจัย</a>
+          <span>•</span>
+          <a href="#section-speaker">งานวิทยากร</a>
+          <span>•</span>
+          <a href="#section-dashboard">Dashboard</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-statement">
+        <!-- EXACT REQUIRED TEXT: ระบบเว็บส่วนบุคคล พัฒนาโดย นางสาวณัฐวรา แซ่เลียบ -->
+        <div class="footer-official-text">
+          ระบบเว็บส่วนบุคคล พัฒนาโดย นางสาวณัฐวรา แซ่เลียบ
+        </div>
+        <div class="footer-copyright-note">
+          Editorial Dossier Portfolio Design • สร้างสรรค์ด้วยศิลปะงานคราฟต์กระดาษสัมผัสละเมียด (Tactile Papery Style) • © 2026 สงวนลิขสิทธิ์
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================
+       ABSTRACT & DETAILS MODAL
+       ======================================================================== -->
+  <div id="abstract-modal" class="craft-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="craft-modal-dialog">
+      <button class="modal-close-btn" onclick="closeAbstractModal()" aria-label="ปิดหน้าต่าง">✕</button>
+      <div id="modal-content-target">
+        <!-- Populated via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="craft-toast" class="craft-toast" role="status" aria-live="polite">
+    <span id="toast-icon">✉️</span>
+    <span id="toast-message">บันทึกข้อมูลเรียบร้อยแล้ว</span>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
